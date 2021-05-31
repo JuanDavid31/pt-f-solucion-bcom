@@ -1,9 +1,26 @@
-import { createRouter, createWebHashHistory, RouteRecordRaw } from "vue-router";
+import {
+  createRouter,
+  createWebHashHistory,
+  createWebHistory,
+  RouteRecordRaw,
+} from "vue-router";
 import Home from "../views/Home.vue";
+import Usuarios from "../views/Usuarios.vue";
+import AgregarUsuario from "../views/AgregarUsuario.vue";
 
 const routes: Array<RouteRecordRaw> = [
   {
     path: "/",
+    name: "Index",
+    component: Usuarios,
+  },
+  {
+    path: "/usuarios/nuevo",
+    name: "AgregarUsuario", //TODO: Qué es esto?
+    component: AgregarUsuario,
+  },
+  {
+    path: "/home",
     name: "Home",
     component: Home,
   },
@@ -19,7 +36,7 @@ const routes: Array<RouteRecordRaw> = [
 ];
 
 const router = createRouter({
-  history: createWebHashHistory(),
+  history: createWebHistory(),
   routes,
 });
 
